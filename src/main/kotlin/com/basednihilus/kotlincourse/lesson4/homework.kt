@@ -6,21 +6,21 @@ package com.basednihilus.kotlincourse.lesson4
 0.123456789 Double
 "Kotlin & Java" String
 false Boolean
-'c' String
+'c' Char
 500 Short
 4294967296L Long
 18.0f Float
 -0.001 Double
 "OpenAI" String
 “true” Boolean
-'9' String
+'9' Char
 2048 Short
 10000000000L Long
 5.75f Float
 1.414 Double
 "Artificial Intelligence" String
 false Boolean
-'@' String
+'@' Char
 1024 Short
 1234567890123L Long
 10.01f Float
@@ -34,7 +34,7 @@ true Boolean
 101.0101 Double
 "Quantum Computing" String
 false Boolean
-'x' String
+'x' Char
 314  Short
 123456789123456789L Long
 6.626f Float
