@@ -1,7 +1,5 @@
 package com.basednihilus.kotlincourse.lesson3
 
-import kotlin.random.Random
-
 val EventName: String = "Hackathon Survival"
 
 var EventDate: String = "09.09.2024"
