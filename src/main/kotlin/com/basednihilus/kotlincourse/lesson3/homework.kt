@@ -18,19 +18,19 @@ val TotalEventBudget: Int = GearBudget + CateringBudget + OtherBudget
 
 val Members: Int = 100
 
-val Duration: String = "10 days"
+var Duration: Long = 8*60*60
 
-val ContactInfo: String = "davletmg@gmail.com"
+private var ContactInfo: String = "davletmg@gmail.com"
 
-val Terms: String = "Basic terms"
+var Terms: String = "Basic terms"
 
-val EventStatusReady: Boolean = true
+val EventStatusReady: Boolean = false
 
 val SponsorList: String = "Nvidia, AMD"
 
 val EventBudget: Int = TotalEventBudget
 
-var InternetStatusReady: Boolean = true
+var InternetStatusReady: Int = 10
 
 var TransportInfo: String = "buses"
 
@@ -38,17 +38,17 @@ var Resourses: String = "all inclusive"
 
 var Coordination: String = "full support"
 
-val Teams: Int = 10
+var Teams: Int = 10
 
 val TasksList: String = "create and run software"
 
-var EscapePlan: String = "ready"
+val EscapePlan: String = "ready"
 
 val AvailableGearList: String = "PCs and laptops"
 
 val FreeGearList: String = "PCs"
 
-var MealTime: String = "every 6 hours"
+lateinit var MealTime: String
 
 var ErrorPlan: String = "ready"
 
@@ -66,7 +66,7 @@ var EventLog: String = "event start, event end"
 
 var MedicalHelp: Boolean = false
 
-var SecurityPlan: String = ErrorPlan + EscapePlan
+private var SecurityPlan: String = ErrorPlan + EscapePlan
 
 val RegistrationNumber: Int = 12345678
 
@@ -102,10 +102,10 @@ var ExtraConditions: Boolean = true
 
 var FunLevel: Int = 100
 
-val TotalPlan: String = EventLog
+lateinit var TotalPlan: String
 
-private val SpecialGuest: String = "Terry Crews"
+lateinit var SpecialGuest: String
 
 val MaximumCapacity: Int = 150
 
-var TeamTiming: Int = 12
+var TeamTiming: Long = 2*60*60
