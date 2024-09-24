@@ -1,29 +1,40 @@
 package com.basednihilus.kotlincourse.lesson6
 
 fun main() {
+    println(yearSeason (10))
+    dogsHumanAge (25)
+    transportType (5)
+    println(bonusPoints (6000))
+    println(documentStorageSystem (".jpeg"))
+    println(temperatureConversion (30, "F"))
+    clothesType(20)
+    println(cinemaAgeCategory(10))
+
 }
 
-fun yearSeason(monthNumber: Int) {
+fun yearSeason(monthNumber: Int): String {
+    var totalYearSeason: String
     if (monthNumber <= 2 && monthNumber >= 1 || monthNumber == 12)
     {
-        println("Winter")
+        totalYearSeason = "Winter"
     }
     else if (monthNumber >= 3 && monthNumber <= 5)
     {
-        println("Spring")
+        totalYearSeason = "Spring"
     }
     else if (monthNumber > 5 && monthNumber < 9)
     {
-        println("Summer")
+        totalYearSeason = "Summer"
     }
     else if (monthNumber > 8 && monthNumber < 12)
     {
-        println("Autumn")
+        totalYearSeason = "Autumn"
     }
     else
     {
-        println ("Error")
+        totalYearSeason = "Error"
     }
+    return totalYearSeason
 }
 
 fun dogsHumanAge(dogsAge: Int) {
@@ -53,33 +64,37 @@ fun transportType(routeLength: Int) {
     }
 }
 
-fun bonusPoints(paidCash: Int) {
+fun bonusPoints(paidCash: Int): String {
+    var totalBonusPoints: String
     if (paidCash <= 1000 && paidCash >= 100)
     {
-        println(paidCash * 2 / 100)
+        totalBonusPoints = (paidCash * 2 / 100).toString()
     } else if (paidCash >= 5000)
     {
-        println(paidCash * 5 / 100)
+        totalBonusPoints = (paidCash * 5 / 100).toString()
     } else
     {
-        println("Error")
+        totalBonusPoints = "Error"
     }
+    return totalBonusPoints
 }
 
-fun documentStorageSystem(fileExtension: String) {
+fun documentStorageSystem(fileExtension: String): String {
+    var totalDocumentType: String
     if (fileExtension == ".txt")
     {
-        println("text")
+        totalDocumentType = "text"
     } else if (fileExtension == ".jpeg")
     {
-        println("picture")
+        totalDocumentType = "picture"
     } else if (fileExtension == ".xlsx")
     {
-        println("table")
+        totalDocumentType = "table"
     } else
     {
-        println("unknown type")
+        totalDocumentType = "unknown type"
     }
+    return totalDocumentType
 }
 
 fun temperatureConversion(temperatureForConv: Int, measureSystem: String): String {
@@ -113,18 +128,20 @@ fun clothesType(temperature: Int) {
     }
 }
 
-fun cinemaAgeCategory(guestAge: Int) {
+fun cinemaAgeCategory(guestAge: Int): String {
+    var TotalAgeCategory: String
     if (guestAge <= 12 && guestAge > 0)
     {
-        println("for kids")
+        TotalAgeCategory = "for kids"
     } else if (guestAge <=17 && guestAge > 12)
     {
-        println("for teens")
+        TotalAgeCategory = "for teens"
     } else if (guestAge >= 18)
     {
-        println("18+")
+        TotalAgeCategory = "18+"
     } else
     {
-        println ("Error")
+        TotalAgeCategory = "Error"
     }
+    return TotalAgeCategory
 }
