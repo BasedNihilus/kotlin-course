@@ -9,7 +9,6 @@ fun main() {
     println(temperatureConversion (30, "F"))
     clothesType(20)
     println(cinemaAgeCategory(10))
-
 }
 
 fun yearSeason(monthNumber: Int): String {
@@ -80,31 +79,22 @@ fun bonusPoints(paidCash: Int): String {
 }
 
 fun documentStorageSystem(fileExtension: String): String {
-    var totalDocumentType: String
-    if (fileExtension == ".txt")
-    {
-        totalDocumentType = "text"
-    } else if (fileExtension == ".jpeg")
-    {
-        totalDocumentType = "picture"
-    } else if (fileExtension == ".xlsx")
-    {
-        totalDocumentType = "table"
-    } else
-    {
-        totalDocumentType = "unknown type"
+    return when (fileExtension) {
+        ".txt", ".doc" -> "text"
+        ".jpeg" -> "picture"
+        ".xlsx" -> "table"
+        else -> "unknown type"
     }
-    return totalDocumentType
 }
 
 fun temperatureConversion(temperatureForConv: Int, measureSystem: String): String {
     var totalResult: String
     if (measureSystem == "C")
     {
-        totalResult = (temperatureForConv * 1.8 + 32).toString()
+        totalResult = "${temperatureForConv * 1.8 + 32} F"
     } else if (measureSystem == "F")
     {
-        totalResult = ((temperatureForConv - 32) / 1.8).toString()
+        totalResult = "${(temperatureForConv - 32) / 1.8} C"
     } else
     {
         totalResult = "Error"
@@ -116,15 +106,24 @@ fun clothesType(temperature: Int) {
     if (temperature <= -1 && temperature >= -29)
     {
         println("jacket and hat")
-    } else if (temperature >= 0 && temperature <= 15)
+    } else if (temperature in 0..15)
     {
         println("windbreaker")
-    } else if (temperature >= 16 && temperature <= 34)
+    } else if (temperature in 16..34)
     {
         println("t-shirt and shorts")
     } else if (temperature <= -30 || temperature >= 35)
     {
         println("stay at home")
+    }
+}
+
+fun whichCloses(temperature: Int): String {
+    return when(temperature) {
+        in -30 until 0 -> "куртка и шапка"
+        in 0..15 -> "ветровка"
+        in 16..35 ->  "футболка и шорты"
+        else -> "не выходить из дома"
     }
 }
 
