@@ -1,7 +1,6 @@
 package com.basednihilus.kotlincourse.lesson6
 
 fun main() {
-    bonusPoints(-100)
 }
 
 fun yearSeason(monthNumber: Int) {
@@ -38,7 +37,7 @@ fun dogsHumanAge(dogsAge: Int) {
 }
 
 fun transportType(routeLength: Int) {
-    if (routeLength <= 1 && routeLength >= 0)
+    if (routeLength <= 1 && routeLength > 0)
     {
         println("onFoot")
     } else if (routeLength <= 5 && routeLength >= 2)
@@ -74,7 +73,7 @@ fun documentStorageSystem(fileExtension: String) {
     } else if (fileExtension == ".jpeg")
     {
         println("picture")
-    } else if (fileExtension == ".xslx")
+    } else if (fileExtension == ".xlsx")
     {
         println("table")
     } else
@@ -83,27 +82,32 @@ fun documentStorageSystem(fileExtension: String) {
     }
 }
 
-fun convertTemperature(value: Double, unit: String): String {
-    return if (unit.uppercase() == "C") {
-        val fahrenheit = value * 9 / 5 + 32
-        "$fahrenheit F"
-    } else {
-        val celsius = (value - 32) * 5 / 9
-        "$celsius C"
+fun temperatureConversion(temperatureForConv: Int, measureSystem: String): String {
+    var totalResult: String
+    if (measureSystem == "C")
+    {
+        totalResult = (temperatureForConv * 1.8 + 32).toString()
+    } else if (measureSystem == "F")
+    {
+        totalResult = ((temperatureForConv - 32) / 1.8).toString()
+    } else
+    {
+        totalResult = "Error"
     }
+    return totalResult
 }
 
 fun clothesType(temperature: Int) {
-    if (temperature <= -1)
+    if (temperature <= -1 && temperature >= -29)
     {
         println("jacket and hat")
     } else if (temperature >= 0 && temperature <= 15)
     {
         println("windbreaker")
-    } else if (temperature >= 16)
+    } else if (temperature >= 16 && temperature <= 34)
     {
         println("t-shirt and shorts")
-    } else if (temperature < -30 || temperature > 35)
+    } else if (temperature <= -30 || temperature >= 35)
     {
         println("stay at home")
     }
