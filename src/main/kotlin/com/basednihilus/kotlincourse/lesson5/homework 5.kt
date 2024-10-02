@@ -2,16 +2,21 @@ package com.basednihilus.kotlincourse.lesson5
 
 fun main() {
     val soundIntensity1 = calculateSoundIntensity(10.0, 0.7)
+        println(soundIntensity1)
     val soundIntensity2 = calculateSoundIntensity(10.0, null)
+        println(soundIntensity2)
 
     val deliveryCost1 = calculateDeliveryCost(100.0)
+        println(deliveryCost1)
     val deliveryCost2 = calculateDeliveryCost(null)
+        println(deliveryCost2)
 
-    val pressureReadings1 = mapOf("temperature" to 25.0, "humidity" to 60.0, "atmospheric_pressure" to 1013.25)
-    val pressureReadings2 = mapOf("temperature" to 25.0, "humidity" to 60.0)
+    val AtmosphericPressure1 = checkAtmosphericPressure( 10.0, null)
+        println(AtmosphericPressure1)
+    val AtmosphericPressure2 = checkAtmosphericPressure(null, 10.0)
+    println(AtmosphericPressure2)
 
-    checkAtmosphericPressure(pressureReadings1)
-    checkAtmosphericPressure(pressureReadings2)
+
 }
 
 fun calculateSoundIntensity(initialIntensity: Double, attenuationCoefficient: Double?): Double {
@@ -25,11 +30,13 @@ fun calculateDeliveryCost(goodsCost: Double?): Double {
     return cost + insuranceCost
 }
 
-fun checkAtmosphericPressure(pressureReadings: Map<String, Double>) {
-    val atmosphericPressure = pressureReadings["atmospheric_pressure"]
-    if (atmosphericPressure == null) {
-        println("Error: Atmospheric pressure reading is missing.")
-    } else {
-        println("Atmospheric pressure reading is present.")
+fun checkAtmosphericPressure(atmospherePressure: Double?, temperatureStatus: Double?): String {
+    val meteoData = atmospherePressure ?: false
+    if (meteoData != false) {
+        return "Everything is okay"
+    }
+    else
+    {
+        return "Error"
     }
 }
