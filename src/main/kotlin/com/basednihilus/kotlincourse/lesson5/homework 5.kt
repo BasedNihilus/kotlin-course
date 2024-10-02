@@ -1,45 +1,35 @@
 package com.basednihilus.kotlincourse.lesson5
 
 fun main() {
+    val soundIntensity1 = calculateSoundIntensity(10.0, 0.7)
+    val soundIntensity2 = calculateSoundIntensity(10.0, null)
 
-    val initialIntensity = 100.0
-    val knownDampingCoefficient: Double? = 0.7
-    val intensityWithKnownCoefficient = calculateDampedSoundIntensity(initialIntensity, knownDampingCoefficient)
-    println("Интенсивность звука с известным коэффициентом затухания: $intensityWithKnownCoefficient")
+    val deliveryCost1 = calculateDeliveryCost(100.0)
+    val deliveryCost2 = calculateDeliveryCost(null)
 
-    val unknownDampingCoefficient: Double? = null
-    val intensityWithUnknownCoefficient = calculateDampedSoundIntensity(initialIntensity, unknownDampingCoefficient)
-    println("Интенсивность звука с неизвестным коэффициентом затухания: $intensityWithUnknownCoefficient")
+    val pressureReadings1 = mapOf("temperature" to 25.0, "humidity" to 60.0, "atmospheric_pressure" to 1013.25)
+    val pressureReadings2 = mapOf("temperature" to 25.0, "humidity" to 60.0)
 
-    val cargoValue: Double? = null
-    val totalCost = calculateTotalShippingCost(cargoValue)
-
-    println("Полная стоимость доставки: $${"%.2f".format(totalCost)}")
-    println(calculateTotalShippingCost(300.0))
-    getPressureReading("v,dbfj")
-    getPressureReading(null)
+    checkAtmosphericPressure(pressureReadings1)
+    checkAtmosphericPressure(pressureReadings2)
 }
 
-fun calculateDampedSoundIntensity(initialIntensity: Double, dampingCoefficient: Double?): Double {
-    val effectiveDampingCoefficient = dampingCoefficient ?: 0.5
-    return initialIntensity * effectiveDampingCoefficient
+fun calculateSoundIntensity(initialIntensity: Double, attenuationCoefficient: Double?): Double {
+    val coefficient = attenuationCoefficient ?: 0.5
+    return initialIntensity * coefficient
 }
 
-
-fun main1() {
-    val cargoValue: Double? = null
-    val totalCost = calculateTotalShippingCost(cargoValue)
-    println("Полная стоимость доставки: $${"%.2f".format(totalCost)}")
+fun calculateDeliveryCost(goodsCost: Double?): Double {
+    val cost = goodsCost ?: 50.0
+    val insuranceCost = cost * 0.005
+    return cost + insuranceCost
 }
 
-fun calculateTotalShippingCost(cargoValue: Double?): Double {
-    val effectiveCargoValue = cargoValue ?: 50.0
-    val insurance = effectiveCargoValue * 0.05
-    val totalShippingCost = effectiveCargoValue + insurance
-    return totalShippingCost
-}
-
-
-fun getPressureReading(report: String?) {
-    println (report ?: throw Exception())
+fun checkAtmosphericPressure(pressureReadings: Map<String, Double>) {
+    val atmosphericPressure = pressureReadings["atmospheric_pressure"]
+    if (atmosphericPressure == null) {
+        println("Error: Atmospheric pressure reading is missing.")
+    } else {
+        println("Atmospheric pressure reading is present.")
+    }
 }
