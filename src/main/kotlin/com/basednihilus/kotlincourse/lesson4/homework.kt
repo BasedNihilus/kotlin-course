@@ -24,7 +24,7 @@ val a: Double = -0.001
 
 val s: String = "OpenAI"
 
-val d: String = “true”
+val d: Boolean = true
 
 val f: Char = '9'
 
@@ -54,9 +54,7 @@ val m: String = "SpaceX"
 
 val qw: Boolean = true
 
-val we: String = “🤯”
-
-val er: String = ‘65535’
+val er: String = "65535"
 
 val rt: Long = 72057594037927935L
 
