@@ -7,3 +7,4 @@ fun main() {
 fun HappyBirthday(name: String, age: Int) {
     println("$name, поздравляю тебя с днем рождения! $age - прекрасный возраст, все только начинается! Желаю тебе всех благ!")
 }
+
