@@ -2,97 +2,77 @@ package com.basednihilus.kotlincourse.lesson10
 
 fun main() {
 
-    println("---задача 1----")
-    val array1 = arrayOf(1, 2, 3, 4, 5)
+    println("task1")
+    val array1 = arrayOf<Int> (1, 2, 3, 4, 5)
     println(array1.toList())
 
-
-    println("---задача 2----")
+    println("task2")
     val array2 = Array(10) { "" }
     println(array2.toList())
 
+    println("task2.1")
+    val array21 = arrayOfNulls<Int>(10)
+    println(array21.toList())
 
-    println("---задача 3----")
-    val array3 = Array(5) { 0.0 }
-    for (i in array3.indices) {
-        array3[i] = (i * 2).toDouble()
-    }
+    println("task3")
+    val array3 = arrayOf<Double> (0.0, 2.0, 4.0, 6.0, 8.0)
     println(array3.toList())
 
+    println("task3.1")
+    val array31 = Array<Double>(5) { i-> i * 2.0 }
+    println(array31.toList())
 
-    println("---задача 4----")
+    println("task4")
     val array4 = Array(5) { 0 }
-    for (i in array3.indices) {
-        array4[i] = (i * 3)
-    }
+        for (i in array4.indices) {
+            array4[i] = i * 3
+        }
     println(array4.toList())
 
-
-    println("---задача 5----")
-    val array5 = arrayOfNulls<String?>(3)
-    array5[0] = null
-    array5[1] = "два"
-    array5[2] = "три"
+    println("task5")
+    val array5 = arrayOf<String?>(null, "", "")
     println(array5.toList())
 
-
-    println("---задача 6----")
-    val array6 = arrayOf(1, 2, 3, 4, 5)
-    val newArray6 = Array(5) { 0 }
+    println("task6")
+    val array6 = Array<Int>(10) {i-> i + 1}
+    val array61 = Array<Int>(10) {i-> i - 1}
     for (i in array6.indices) {
-        newArray6[i] = array6[i]
+            array61[i] = array6[i]
     }
-    println(newArray6.toList())
+    println(array6.toList())
+    println(array61.toList())
 
-
-    println("---задача 7----")
-    val array7 = arrayOf(3, 4, 5, 6, 7)
-    val secondArray7 = arrayOf(1, 2, 3, 4, 5)
-    val newArray7 = Array(5) { 0 }
-    for (i in array7.indices) {
-        newArray7[i] = array7[i] - secondArray7[i]
+    println("task7")
+    val array7 = Array<Int>(10) {i-> i + 1}
+    val array71 = Array<Int>(10) {i-> i + 1}
+    val array72 = Array<Int>(10) {i-> i + 1}
+    for (i in array72.indices) {
+        array72[i] = array7[i] - array71[i]
     }
-    println(newArray7.toList())
+    println(array72.toList())
 
-
-    println("---задача 8----")
-    val array8 = arrayOf(0, 1, 2, 3, 4, 5, 6, 7)
-    var i = 0
-    while (i < array8.lastIndex) {
-        if (array8[i] == 5) {
-            println(array8[i])
-        } else {
+    println("task8")
+    val array8 = Array<Int>(5) {i-> i + 1}
+    var item88 = 0
+    while (item88 <= array8.lastIndex) {
+        if (array8[item88] == 5) {
+            println(item88)
+        } else if (array8.size != 5) {
             println(-1)
         }
-        i++
+        item88++
     }
 
-
-    println("---задача 9----")
-    val array9 = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-    for (index in array9.indices) {
-        if (array9[index] % 2 == 0) {
-            println("${array9[index]} - чётное")
+    println("task9")
+    val array9 = arrayOf(5, 6, 7, 8, 9)
+    for (i in 0..4)
+        if (i % 2 == 0) {
+            println(array9[i].toString() + "Odd")
         } else {
-            println("${array9[index]} - нечётное")
+            println(array9[i].toString() + "Even")
         }
-    }
 
+    println("task10")
 
-    println("---задача 10----")
-    val array10 = arrayOf("раз", "два", "три", "четыре", "пять" )
-    val searchString = "четыре"
-    println(search(array10, searchString))
 }
-fun search(array10: Array<String>, searchString: String?): String {
-    if (searchString != null) {
-        for (i in array10) {
-            if (i.contains(searchString)) {
-                return i
-            } else{
-                Unit
-            }
-        }
-    }
-    return "не найдено"
-}
+
