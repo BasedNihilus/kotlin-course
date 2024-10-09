@@ -73,6 +73,17 @@ fun main() {
         }
 
     println("task10")
+    val stringArray= arrayOf<String> ("Hello", "World")
+    println(task10(stringArray, "Hello"))
 
 }
 
+    fun task10(stringArray: Array<String>, searchString: String): Any {
+        var totalResult: String = ""
+        for (i in stringArray) {
+             if (i.contains(searchString)) {
+                 totalResult = searchString
+             }
+             }
+                 return totalResult
+        }
