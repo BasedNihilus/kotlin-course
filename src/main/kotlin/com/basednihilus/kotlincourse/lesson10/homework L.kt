@@ -2,92 +2,75 @@ package com.basednihilus.kotlincourse.lesson10
 
 fun main() {
 
-
-    println("----задача 1----")
-    val list1 = listOf<Int>()
+    println("task1")
+    val list1 = List(0) {0}
     println(list1)
 
-
-    println("----задача 2----")
-    val list2 = listOf("Hello", "World", "Kotlin")
+    println("task2")
+    val list2 = listOf<String>("Hello", "World", "Kotlin")
     println(list2)
 
-
-    println("----задача 3----")
-    val list3 = mutableListOf(1, 2, 3, 4, 5)
+    println("task3")
+    var list3 = mutableListOf<Int>(1, 2, 3, 4, 5)
     println(list3)
 
+    println("task4")
+    list3.add(6)
+    list3.add(7)
+    list3.add(8)
+    println(list3)
 
-    println("----задача 4----")
-    val list4 = mutableListOf(1, 2, 3, 4, 5)
-    list4.add(6)
-    list4.add(7)
-    list4.add(8)
-    println(list4)
-
-
-    println("----задача 5----")
-    val list5 = mutableListOf("Disney", "World", "is", "shittiest", "studio", "in", "the", "world")
+    println("task5")
+    var list5 = mutableListOf<String>("Hello", "World", "Kotlin")
     list5.remove("World")
     println(list5)
 
-
-    println("----задача 6----")
-    val list6 = listOf(11, 12, 13, 14, 15)
-    for (i in list6){
-        println(i)
+    println("task6")
+    val list6 = listOf<Int>(1, 2, 3, 4, 5)
+    for (i in list6.indices) {
+        println(list6[i])
     }
 
-
-    println("----задача 7----")
-    val list7 = listOf("Мама", "мыла", "раму")
+    println("task7")
+    val list7 = listOf<String>("Hello", "World", "Kotlin")
     println(list7[1])
 
+    println("task8")
+    var list8 = mutableListOf<Int>(1, 2, 3, 4, 5)
+    list8[1] = 6
+    println(list8)
 
-    println("----задача 8----")
-    val list8 = mutableListOf("Папа ", "у ", "Васи ", "силен ", "в ", "математике")
-    list8[2] = "Пети "
-    print(list8)
-
-
-    println("----задача 8----")
-    val list9 = listOf("one", "two", "three")
-    val secondList9 = listOf("four", "five", "six")
-    val unitedList = mutableListOf<String>()
-    for (element in list9){
-        unitedList.add(element)
+    println("task9")
+    val list9 = listOf<String>("Hello", "World", "Kotlin")
+    val list91 = listOf<String>("Hi", "Earth", "Java")
+    var list92 = mutableListOf<String>()
+    for (i in list9) {
+        list92.add(i)
     }
-    for (element in secondList9){
-        unitedList.add(element)
+    for (i in list91) {
+        list92.add(i)
     }
-    println(unitedList)
+    println(list92)
 
-
-    println("----задача 10----")
-    val list10 = listOf(0, 12, 213, 1, 22, -10, 155)
-    var minValue = 0
-    var maxValue = 0
-    for (i in list10) {
-        if (i < minValue) {
-            minValue = i
+    println("task10")
+    val list10 = listOf<Int>(1, 2, 3, 4, 5)
+    for (i in list10)
+        if (i == 1 || i == 5) {
+            println(i)
         }
-        if (i > maxValue) {
-            maxValue = i
+
+    println("task101")
+    var list101 = listOf<Int>(10, 31, 22, 53, 44)
+    list101 = list101.sorted()
+    println(list101[0])
+    println(list101[list101.size - 1])
+
+    println("task11")
+    val list11 = listOf<Int>(10, 31, 22, 53, 44)
+    var list111 = mutableListOf<Int>()
+    for (i in list11)
+        if (i % 2 == 0) {
+            list111.add(i)
         }
-    }
-    println("Минимальное значение равно: $minValue")
-    println("Максимальное значение равно: $maxValue")
-
-
-
-    println("----задача 11----")
-    val list11 = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
-    val evenList = mutableListOf<Int>()
-    for (i in list11){
-        if (i % 2 == 0){
-            evenList.add(i)
-        }
-    }
-    println(evenList)
-
+    println(list111)
 }
