@@ -20,7 +20,7 @@ class Section(
         if (name.isEmpty()) {
             return items.firstOrNull()
         }
-        return items.find { it.name == name } ?: items.firstOrNull() // Если не найден, возвращаем первый элемент или null
+        return items.find { it.name == name } ?: items.firstOrNull()
     }
 
     fun remove(item: Item): Boolean {
